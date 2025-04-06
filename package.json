@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "name": "takume-e-jo-o",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takume31/Takume-e-Jo-o.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/takume31/Takume-e-Jo-o/issues"
+  },
+  "homepage": "https://github.com/takume31/Takume-e-Jo-o#readme"
+}

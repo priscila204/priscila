@@ -1,0 +1,7 @@
+iniciar o comando node.js
+
+npm init -y
+
+instalar modulo 
+
+npm install modulo  
