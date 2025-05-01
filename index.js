@@ -1,18 +1,30 @@
-const express = require ('express');
-const app = express();
-app.use(express.urlencoded({ extends: true }));
 
-app.get("/", (req, res) =>{
-res.send("ola mundo?");
+const express = require('express');
+const exphbs = require('express-handlebars');
+
+const app = express();
+
+// Configura Handlebars
+app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
+// Rotas
+app.get('/', (req, res) => {
+    res.render('home');
 });
 
-const veiculoRoute = require("./routes/veiculoRoute")
-app. use("/veiculoRoute", veiculoRoute);
+app.get('/contatos', (req, res) => {
+    res.render('contatos');
+});
 
-app.listen(8000, (err) => {
-    if (err) {
-        console.log("Erro: " + JSON.stringify(err));
-    }else{
-        console.log(`Servidor rodando na porta http://localhost:${8000}`);
-    }
-})
+app.get('/usuarios', (req, res) => {
+    res.render('usuarios');
+});
+
+// Servidor
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
+});
+
+
