@@ -20,6 +20,8 @@ app.get('/contatos', (req, res) => {
 app.get('/usuarios', (req, res) => {
     res.render('usuarios');
 });
+const veiculoRoutes = require("./routes/VeiculoRoutes");
+app.use("/veiculos", veiculoRoutes);
 
 // Servidor
 const PORT = 3000;

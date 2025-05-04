@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.3",
+    "prisma": "^6.7.0"
   },
   "name": "priscila-e-adrhyan",
   "version": "1.0.0",
@@ -12,14 +14,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/priscila/priscila-e-adrhyan.git"
+    "url": "git+https://github.com/priscila204/priscila.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/takume31/Takume-e-Jo-o/issues"
+    "url": "https://github.com/priscila204/priscila/issues"
   },
-  "homepage": "https://github.com/takume31/Takume-e-Jo-o#readme"
+  "homepage": "https://github.com/#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }
