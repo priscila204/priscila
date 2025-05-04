@@ -1,41 +1,25 @@
+const path = require("path");
+const { PrismaClient } = require("@prisma/client");
 
-
-const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-class VeiculosController {
-  // Método para criar um novo veículo
-  static async criar(req, res) {
-    try {
-      const { placa, modelo, ano } = req.body;
-      const veiculo = await prisma.veiculo.create({
-        data: {
-          placa,
-          modelo,
-          ano: parseInt(ano),
-        },
-      });
-      res.status(201).json(veiculo);
-    } catch (error) {
-      res.status(500).json({ erro: 'Erro ao criar veículo', detalhes: error.message });
+class VeiculoController {
+    static formCadastro(req, res) {
+        res.sendFile(path.join(__dirname, "..", "views", "formVeiculo.html"))
     }
-  }
 
-  // Método para buscar todos os veículos
-  static async buscartodos(req, res) {
-    try {
-      const veiculos = await prisma.veiculo.findMany();
-      res.status(200).json(veiculos);
-    } catch (error) {
-      res.status(500).json({ erro: 'Erro ao buscar veículos', detalhes: error.message });
-    }
-  }
+static async cadastrar(req, res) {
+    const veiculo = await prisma.veiculo.create ({
+        data:{
+            placa: req.body.placa,
+            modelo: req.body.modelo,
+            ano: parseInt(req.body.ano),
+            cor: req.body.cor,
+        },
+    });
+    res.send(` O veiculo foi cadastrado sob o ID: ${veiculo.id}`)
 }
 
-module.exports = VeiculosController;
-
-
-
-
-
-
+static buscarTodos(req, res) {}
+}
+module.exports = VeiculoController;

@@ -1,11 +1,30 @@
-<h1>Cadastro de Veículo</h1>
-
-<form action="/veiculos/cadastro" method="POST">
-  <label for="modelo">Modelo:</label>
-  <input type="text" id="modelo" name="modelo" required>
-
-  <label for="marca">Marca:</label>
-  <input type="text" id="marca" name="marca" required>
-
-  <button type="submit">Cadastrar</button>
-</form>
+    <!DOCTYPE html>
+    <html lang="=en">
+        <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Veiculos</title>
+        </head>
+        <body>
+            <h1>Cadastrar veiculos</h1>
+            <form action="/veiculos/cadastro" method="post">
+                <div>
+                    <label for="Placa">Placa</label>
+                    <input type="text" id="Placa" name="placa" minlength="7" maxlength="8">
+                </div>
+                <div>
+                    <label for="modelo">modelo</label>
+                    <input type="text" id="modelo" name="modelo">
+                </div>
+                <div>
+                    <label for="cor">cor</label>
+                    <input type="text" id="cor" name="cor">
+                </div>
+                <div>
+                    <label for="ano">ano</label>
+                    <input type="number" id="ano" name="ano" min="1950" max="2050">
+                </div>
+                <input type="submit" value="Enviar">
+            </form>
+        </body>
+    </html>

@@ -1,0 +1,7 @@
+npm i prisma
+npx prisma init
+npx prisma migrate dav
+npx prisma generate
+
+
+npx prisma studio
