@@ -3,6 +3,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 
 const app = express();
+app.use(express.urlencoded({ extended: true }));
 
 // Configura Handlebars
 app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }));
@@ -16,11 +17,14 @@ app.get('/', (req, res) => {
 app.get('/contatos', (req, res) => {
     res.render('contatos');
 });
+app.get('/VeiculosCadastro', (req, res) => {
+    res.render('formVeiculos');
+});
 
 app.get('/usuarios', (req, res) => {
     res.render('usuarios');
 });
-const veiculoRoutes = require("./routes/VeiculoRoutes");
+const veiculoRoutes = require("./routes/veiculoRoute");
 app.use("/veiculos", veiculoRoutes);
 
 // Servidor

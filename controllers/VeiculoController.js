@@ -1,11 +1,12 @@
 const path = require("path");
-const { PrismaClient } = require("@prisma/client");
+const { PrismaClient } = require('@prisma/client');
+
 
 const prisma = new PrismaClient();
 
 class VeiculoController {
     static formCadastro(req, res) {
-        res.sendFile(path.join(__dirname, "..", "views", "formVeiculo.html"))
+        res.sendFile(path.join(__dirname, "..", "views", "formVeiculo.handlebars"))
     }
 
 static async cadastrar(req, res) {
