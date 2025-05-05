@@ -19,8 +19,14 @@ static async cadastrar(req, res) {
         },
     });
     res.send(` O veiculo foi cadastrado sob o ID: ${veiculo.id}`)
+
+    res.render("formVeiculo", { year: new Date().getFullYear() });
+
 }
 
-static buscarTodos(req, res) {}
+static async buscarTodos(req, res) {
+
+}
+
 }
 module.exports = VeiculoController;

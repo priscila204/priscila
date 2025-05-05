@@ -56,6 +56,8 @@ app.listen(8000, (err) => {
   console.log("Servidor rodando!");
 });
 
+app.use(express.static("public"));
+
 
 {{! Print de valores }}
 <p>Bem-vindo(a), {{usuarioLogado.nome}}!</p>

@@ -8,4 +8,4 @@ router.post("/cadastro", VeiculoController.cadastrar);
 
 router.get("/todos", VeiculoController.buscarTodos);
 
-module.exports = router;
+module.exports = router; 
